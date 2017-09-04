@@ -222,6 +222,9 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
+    # NFC
+    chown nfc nfc /dev/pn54x
+
 service qcomsysd /system/vendor/bin/qcom-system-daemon
     class main
     user root
