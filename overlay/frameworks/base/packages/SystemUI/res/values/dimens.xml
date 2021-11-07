@@ -36,4 +36,6 @@
     <!-- Location on the screen of the center of the fingerprint sensor. -->
     <dimen name="physical_fingerprint_sensor_center_screen_location_y">1060px</dimen>
 
+    <dimen name="rounded_corner_content_padding">47px</dimen>
+
 </resources>
