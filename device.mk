@@ -383,6 +383,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     vendor/nxp/opensource/sn100x
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.boot.product.hardware.sku=nfc
+
 PRODUCT_PACKAGES += \
     android.hardware.secure_element@1.2.vendor \
     android.hardware.secure_element@1.2 \
