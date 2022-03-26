@@ -71,4 +71,5 @@ void set_ro_product_prop(const std::string& prop, const std::string& value) {
 
 void vendor_load_properties() {
     property_override("ro.apex.updatable", "false");
+    property_override("ro.build.description", "lisa_global-user 11 RKQ1.210503.001 V12.5.14.0.RKOMIXM release-key");
 }
