@@ -1,2 +1,2 @@
 allow zygote zygote:capability { kill };
-allow zygote device:file { write };
+allow zygote device:file { write open };

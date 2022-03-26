@@ -1,2 +1,3 @@
 allow init vendor_file:file { execute execute_no_trans };
 allow init init:netlink_kobject_uevent_socket { create bind };
+allow init init:qipcrtr_socket { create };
