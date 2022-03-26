@@ -1,5 +1,5 @@
 #=============================================================================
-# Copyright (c) 2019-2020 Qualcomm Technologies, Inc.
+# Copyright (c) 2019-2021 Qualcomm Technologies, Inc.
 # All Rights Reserved.
 # Confidential and Proprietary - Qualcomm Technologies, Inc.
 #
@@ -30,7 +30,17 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #=============================================================================
 
+on early-init
+    write /proc/sys/kernel/sched_boost 1
+
 on init
+    # Create cgroup mount point for memory
+    mkdir /sys/fs/cgroup/memory/bg 0750 root system
+    write /sys/fs/cgroup/memory/bg/memory.swappiness 140
+    write /sys/fs/cgroup/memory/bg/memory.move_charge_at_immigrate 1
+    chown root system /sys/fs/cgroup/memory/bg/tasks
+    chmod 0660 /sys/fs/cgroup/memory/bg/tasks
+
     # Update scheduler tunables
     write /dev/cpuctl/foreground/cpu.uclamp.sched_boost_no_override 1
     write /dev/cpuctl/top-app/cpu.uclamp.sched_boost_no_override 1
@@ -39,7 +49,6 @@ on init
     write /dev/cpuctl/top-app/cpu.uclamp.colocate 1
 
 on post-fs
-    # Set aggressive read ahead for dm-0 and dm-1 during boot up
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
     write /sys/block/dm-2/queue/read_ahead_kb 2048
@@ -59,6 +68,10 @@ on boot
     write /sys/block/sdd/queue/scheduler bfq
     write /sys/block/sde/queue/scheduler bfq
     write /sys/block/sdf/queue/scheduler bfq
+    write /sys/block/sdg/queue/scheduler bfq
+    write /sys/block/sdh/queue/scheduler bfq
+    write /sys/class/block/mmcblk0/queue/scheduler bfq
+    write /sys/class/block/mmcblk1/queue/scheduler bfq
 
     # Update io-scheduler tunables
     write /sys/block/sda/queue/iosched/slice_idle 0
@@ -67,8 +80,19 @@ on boot
     write /sys/block/sdd/queue/iosched/slice_idle 0
     write /sys/block/sde/queue/iosched/slice_idle 0
     write /sys/block/sdf/queue/iosched/slice_idle 0
+    write /sys/block/sdg/queue/iosched/slice_idle 0
+    write /sys/block/sdh/queue/iosched/slice_idle 0
+    write /sys/class/block/mmcblk0/queue/iosched/slice_idle 0
+    write /sys/class/block/mmcblk1/queue/iosched/slice_idle 0
 
-service kernel-post-boot /vendor/bin/sh /vendor/bin/init.kernel.post_boot-lahaina.sh
+service kernel-boot /vendor/bin/sh /vendor/bin/init.qti.kernel.sh
+    class core
+    user root
+    group root
+    disabled
+    oneshot
+
+service kernel-post-boot /vendor/bin/sh /vendor/bin/init.kernel.post_boot-yupik.sh
     class core
     user root
     group root system wakelock graphics
@@ -80,10 +104,12 @@ on property:sys.boot_completed=1
     write /sys/block/dm-0/queue/read_ahead_kb 512
     write /sys/block/dm-1/queue/read_ahead_kb 512
     write /sys/block/dm-2/queue/read_ahead_kb 512
-
+    write /proc/sys/vm/page-cluster 0
+    start kernel-boot
     start kernel-post-boot
 
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
     user root
     group root
+    disabled
