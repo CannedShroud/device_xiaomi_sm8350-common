@@ -34,6 +34,9 @@
 /data/vendor/fpc(/.*)?                                              u:object_r:vendor_fingerprint_data_file:s0
 /vendor/bin/hw/mfp-daemon                                           u:object_r:vendor_mfp-daemon_exec:s0
 
+# MI_DISPLAY
+/sys/devices/virtual/mi_display/disp_feature/disp-DSI-+[0-1](/.*)?	u:object_r:vendor_sysfs_graphics:s0
+
 # Thermal
 /data/vendor/thermal(/.*)?                           u:object_r:thermal_data_file:s0
 /vendor/bin/mi_thermald                              u:object_r:mi_thermald_exec:s0
