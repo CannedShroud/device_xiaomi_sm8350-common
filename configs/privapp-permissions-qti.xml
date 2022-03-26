@@ -12,4 +12,13 @@
         <permission name="android.permission.SUBSTITUTE_NOTIFICATION_APP_NAME"/>
         <permission name="android.permission.WRITE_SECURE_SETTINGS" />
     </privapp-permissions>
+
+    <privapp-permissions package="com.android.phone">
+        <permission name="android.permission.READ_PHONE_STATE"/>
+    </privapp-permissions>
+
+    <privapp-permissions package="com.android.cellbroadcastreceiver">
+        <permission name="android.permission.READ_PHONE_STATE"/>
+    </privapp-permissions>
+
 </permissions>
