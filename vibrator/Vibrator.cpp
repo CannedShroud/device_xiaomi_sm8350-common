@@ -28,7 +28,7 @@
  */
 
 #define LOG_TAG "vendor.qti.vibrator"
-
+#define DEBUG 0
 #include <cutils/properties.h>
 #include <dirent.h>
 #include <inttypes.h>
@@ -296,15 +296,15 @@ ndk::ScopedAStatus Vibrator::getCapabilities(int32_t* _aidl_return) {
         *_aidl_return |= IVibrator::CAP_PERFORM_CALLBACK;
     if (ff.mSupportExternalControl)
         *_aidl_return |= IVibrator::CAP_EXTERNAL_CONTROL;
-
-    ALOGD("QTI Vibrator reporting capabilities: %d", *_aidl_return);
+    if (DEBUG)
+        ALOGD("QTI Vibrator reporting capabilities: %d", *_aidl_return);
     return ndk::ScopedAStatus::ok();
 }
 
 ndk::ScopedAStatus Vibrator::off() {
     int ret;
-
-    ALOGD("QTI Vibrator off");
+    if (DEBUG)
+        ALOGD("QTI Vibrator off");
 
     ret = ff.off();
     if (ret != 0)
@@ -316,8 +316,8 @@ ndk::ScopedAStatus Vibrator::off() {
 ndk::ScopedAStatus Vibrator::on(int32_t timeoutMs,
                                 const std::shared_ptr<IVibratorCallback>& callback) {
     int ret;
-
-    ALOGD("Vibrator on for timeoutMs: %d", timeoutMs);
+    if (DEBUG)
+        ALOGD("Vibrator on for timeoutMs: %d", timeoutMs);
 
     ret = ff.on(timeoutMs);
     if (ret != 0)
@@ -325,9 +325,11 @@ ndk::ScopedAStatus Vibrator::on(int32_t timeoutMs,
 
     if (callback != nullptr) {
         std::thread([=] {
-            ALOGD("Starting on on another thread");
+            if (DEBUG)
+                ALOGD("Starting on on another thread");
             usleep(timeoutMs * 1000);
-            ALOGD("Notifying on complete");
+            if (DEBUG)
+                ALOGD("Notifying on complete");
             if (!callback->onComplete().isOk()) {
                 ALOGE("Failed to call onComplete");
             }
@@ -340,8 +342,8 @@ ndk::ScopedAStatus Vibrator::on(int32_t timeoutMs,
 ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es, const std::shared_ptr<IVibratorCallback>& callback, int32_t* _aidl_return) {
     long playLengthMs;
     int ret;
-
-    ALOGD("Vibrator perform effect %d", effect);
+    if (DEBUG)
+        ALOGD("Vibrator perform effect %d", effect);
 
     if (effect < Effect::CLICK ||
             effect > Effect::HEAVY_CLICK)
@@ -356,9 +358,11 @@ ndk::ScopedAStatus Vibrator::perform(Effect effect, EffectStrength es, const std
 
     if (callback != nullptr) {
         std::thread([=] {
-            ALOGD("Starting perform on another thread");
+            if (DEBUG)
+                ALOGD("Starting perform on another thread");
             usleep(playLengthMs * 1000);
-            ALOGD("Notifying perform complete");
+            if (DEBUG)
+                ALOGD("Notifying perform complete");
             callback->onComplete();
         }).detach();
     }
@@ -377,8 +381,8 @@ ndk::ScopedAStatus Vibrator::getSupportedEffects(std::vector<Effect>* _aidl_retu
 ndk::ScopedAStatus Vibrator::setAmplitude(float amplitude) {
     uint8_t tmp;
     int ret;
-
-    ALOGD("Vibrator set amplitude: %f", amplitude);
+    if (DEBUG)
+        ALOGD("Vibrator set amplitude: %f", amplitude);
 
     if (amplitude <= 0.0f || amplitude > 1.0f)
         return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_ILLEGAL_ARGUMENT));
@@ -395,7 +399,8 @@ ndk::ScopedAStatus Vibrator::setAmplitude(float amplitude) {
 }
 
 ndk::ScopedAStatus Vibrator::setExternalControl(bool enabled) {
-    ALOGD("Vibrator set external control: %d", enabled);
+    if (DEBUG)
+        ALOGD("Vibrator set external control: %d", enabled);
     if (!ff.mSupportExternalControl)
         return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 
