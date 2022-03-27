@@ -246,6 +246,9 @@ ro.vendor.perf.scroll_opt=0
 
 # Qcom
 ro.vendor.qti.sys.fw.bservice_enable=true
+ro.vendor.qti.soc_name=yupik
+ro.vendor.qti.soc_model=SM7325
+
 
 # Qcomsysd
 persist.vendor.qcomsysd.enabled=1
