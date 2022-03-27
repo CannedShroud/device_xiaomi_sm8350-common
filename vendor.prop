@@ -301,7 +301,7 @@ persist.vendor.sensors.on_change_sample_period=true
 persist.vendor.sensors.sync_request=true
 
 # SKU
-ro.boot.product.vendor.sku=lahaina
+ro.boot.product.vendor.sku=yupik
 
 # Storage
 ro.incremental.enable=yes
