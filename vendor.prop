@@ -223,7 +223,7 @@ ro.vendor.media.video.frc.support=true
 ro.vendor.media.video.vpp.support=true
 ro.media.xml_variant.codecs=_yupik_v0
 ro.media.xml_variant.codecs_performance=_yupik_v0
-vendor.netflix.bsp_rev "Q7325-SPY-33758-1"
+vendor.netflix.bsp_rev=Q7325-SPY-33758-1
 vendor.media.target_variant=_yupik_v0
 vendor.media.vpp.aie.cade=100
 vendor.media.vpp.aie.ltm=1
