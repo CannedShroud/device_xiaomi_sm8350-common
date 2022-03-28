@@ -11,6 +11,9 @@
 # Camera
 /mnt/vendor/persist/camera(/.*)?   u:object_r:camera_persist_file:s0
 
+# Media
+/vendor/bin/hw/dolbycodec2			u:object_r:mediacodec_exec:s0
+
 # IR
 /dev/ir_spi                                      u:object_r:ir_spi_device:s0
 
