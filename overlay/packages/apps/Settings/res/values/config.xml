@@ -39,4 +39,8 @@
         <item>257</item>
     </integer-array>
 
+    <!-- Fingerprint sensor -->
+    <dimen name="fingerprint_dot_radius">0dp</dimen>
+    <dimen name="fingerprint_pulse_radius">0dp</dimen>
+
 </resources>
