@@ -154,7 +154,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
-debug.egl.hw=1
 debug.mdpcomp.logs=0
 debug.sf.disable_client_composition_cache=1
 debug.sf.enable_advanced_sf_phase_offset=1
@@ -163,8 +162,6 @@ debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
 debug.sf.high_fps_early_phase_offset_ns=-4000000
 debug.sf.high_fps_late_app_phase_offset_ns=1000000
 debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
-debug.sf.hw=1
-debug.sf.latch_unsignaled=0
 debug.sf.set_idle_timer_ms=3000c
 persist.sys.sf.color_mode=9
 persist.sys.sf.color_saturation=1.0
@@ -187,7 +184,6 @@ ro.vendor.sf.enable_fb_scaling=1
 vendor.display.comp_mask=0
 vendor.display.disable_excl_rect=0
 vendor.display.disable_excl_rect_partial_fb=1
-vendor.display.disable_hw_recovery_dump=1
 vendor.display.disable_offline_rotator=1
 vendor.display.disable_scaler=0
 vendor.display.enable_async_powermode=0
