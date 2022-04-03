@@ -164,7 +164,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
 # Display
-
 -include hardware/qcom-caf/sm8350/display/config/display-board.mk
 -include hardware/qcom-caf/sm8350/display/config/display-product.mk
 include vendor/qcom/opensource/commonsys-intf/display/config/display-interfaces-product.mk
@@ -428,7 +427,8 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
     vendor.qti.hardware.perf@2.2.vendor \
-    libqti-perfd-client
+    libqti-perfd-client \
+    android.hardware.power.stats@1.0-service.mock
 
 
 PRODUCT_COPY_FILES += \
