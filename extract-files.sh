@@ -59,11 +59,21 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        vendor/etc/camera/pureShot_parameter.xml)
-            sed -i 's/=\([0-9]\+\)>/="\1">/g' "${2}"
+        odm/etc/vintf/manifest/c2_manifest_xiaomi.xml)
+            sed -i 's|<hal format="hidl">|<hal format="hidl" override="true">|g' "${2}"
+            sed -i "/ozoaudio/d" "${2}"
             ;;
-        vendor/etc/vintf/manifest/c2_manifest_vendor.xml)
-            sed -i -e '/ozoaudio/d' -e '/dolby/d' "${2}"
+        vendor/etc/camera/pure*_parameter.xml)
+            sed -i "s/=\([0-9]\+\)>/=\"\1\">/g" "${2}"
+            ;;
+        vendor/lib64/hw/camera.xiaomi.so)
+            # Before
+            # 21 00 80 52     mov        w1,#0x1
+            # 29 07 00 94     bl         <EXTERNAL>::android::hardware::configureRpcThr
+            # After
+            # 21 00 80 52     mov        w1,#0x1
+            # 1f 20 03 d5     nop
+            sed -i "s/\x21\x00\x80\x52\x29\x07\x00\x94/\x21\x00\x80\x52\x1f\x20\x03\xd5/g" "${2}"
             ;;
     esac
 }
