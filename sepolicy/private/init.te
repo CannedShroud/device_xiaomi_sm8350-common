@@ -1,0 +1,4 @@
+allow init hwservicemanager:binder { transfer };
+allow init hal_allocator_default:binder { call };
+allow init hal_allocator_default:fd { use };
+allow init system_file:file { execute_no_trans };
