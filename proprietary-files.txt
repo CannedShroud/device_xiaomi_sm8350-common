@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from haydn_eea-user 11 RKQ1.201112.002 V12.5.8.0.RKKEUXM release-keys
+# All unpinned blobs below are extracted from missi-user-12-SKQ1.211006.001-V13.0.3.0.SKOINXM-release-keys
 
 # ADSP
 vendor/bin/adsprpcd
@@ -16,8 +16,12 @@ vendor/lib/libadm.so
 vendor/lib/libadsprpc.so
 vendor/lib/libaudcal.so
 vendor/lib/libqtigef.so
+vendor/lib/libresampler.so
 vendor/lib/libssrec.so
 vendor/lib64/libadsprpc.so
+vendor/lib64/libresampler.so
+vendor/lib64/libdeflicker.so
+vendor/lib64/soundfx/libmisoundfx.so
 
 # Audio FX modules
 vendor/lib/soundfx/libasphere.so
@@ -26,17 +30,17 @@ vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
 
-# Bluetooth - from lisa_global-user 11 RKQ1.210503.001 V12.5.14.0.RKOMIXM release-keys
+# Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|cc38c89611a42fdfd0da67a7fdc1ec2f4884992b
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|f4ee3b2da2b08647447869ade86ec63f7340accc
 vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|5b635a393af46e820690552ed8170571e0b1fee0
 vendor/lib64/libbtnv.so|7808463b58eb41ec50a0a2b81079229316ec11e3
 vendor/lib64/libsoc_helper.so|30dc6288ae0bdd74a2750dbde4362eb1c3cc1de7
 
-# Bluetooth (shared dependencies) - from lisa_global-user 11 RKQ1.210503.001 V12.5.14.0.RKOMIXM release-keys
+# Bluetooth (shared dependencies)
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|9af9b8c5d45b5fb352a2b7f79ef03f2da52b8904
 
-# Bluetooth (A2DP) - from lisa_global-user 11 RKQ1.210503.001 V12.5.14.0.RKOMIXM release-keys
+# Bluetooth (A2DP)
 vendor/lib/hw/audio.bluetooth_qti.default.so|65088e5ea8ae9d57b27202f95535f503447c0732
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|9baceec3a332f79945941b7dc74c27dbf115cfe2
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.1-impl.so|b4d26ca8b9709617ffd46a1d303f227495cef9f9
@@ -60,10 +64,6 @@ vendor/lib64/libbluetooth_audio_session_qti_2_1.so|05d120062fa3c3254ad1b2b2fcc3d
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so|949e8e8c6fde83516d9103ae53e87ecd3a8b6eb6
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|dfb5d4ce5e2f8b59b1d74f7661e75327e4187d78
 
-# Bluetooth (AptX)
-system_ext/lib64/libaptX_encoder.so
-system_ext/lib64/libaptXHD_encoder.so
-
 # CDSP
 vendor/bin/cdsprpcd
 vendor/etc/init/vendor.qti.cdsprpc-service.rc
@@ -83,13 +83,22 @@ vendor/lib64/libfastcvdsp_stub.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libsdsprpc.so
 vendor/lib64/libsysmon_cdsp_skel.so
+vendor/lib/libcdsp_default_listener.so
 
 # Charger (Mi Turbo Charge)
 vendor/bin/batterysecret
 
+# Camera
+vendor/lib64/libaidenoiserv2.so
+vendor/lib/libaidenoiserv2.so
+vendor/lib64/libmialgo_pureView.so
+vendor/lib64/libomp.so
+
 # CNE
 -vendor/app/CneApp/CneApp.apk
 vendor/bin/cnd
+vendor/etc/cne/mwqem.conf
+vendor/etc/cne/profileMwqem.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml
@@ -126,8 +135,14 @@ vendor/lib64/libcneqmiutils.so
 vendor/lib64/libwms.so
 vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
+vendor/lib/vendor.qti.data.factory@2.0.so
 vendor/lib64/vendor.qti.data.factory@2.0.so
+vendor/lib/vendor.qti.data.factory@2.1.so
 vendor/lib64/vendor.qti.data.factory@2.1.so
+vendor/lib/vendor.qti.data.factory@2.2.so
+vendor/lib64/vendor.qti.data.factory@2.2.so
+vendor/lib/vendor.qti.data.factory@2.3.so
+vendor/lib64/vendor.qti.data.factory@2.3.so
 vendor/lib64/vendor.qti.data.slm@1.0.so
 vendor/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
 vendor/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
@@ -140,6 +155,14 @@ vendor/lib64/vendor.qti.hardware.data.latency@1.0.so
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
 vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
 vendor/lib64/vendor.qti.latency@2.0.so
+vendor/lib64/vendor.qti.data.mwqem@1.0.so
+vendor/lib/vendor.qti.data.mwqem@1.0.so
+vendor/lib64/vendor.qti.latency@2.1.so
+vendor/lib/vendor.qti.latency@2.1.so
+vendor/lib64/vendor.qti.hardware.mwqemadapter@1.0.so
+vendor/lib/vendor.qti.hardware.mwqemadapter@1.0.so
+vendor/lib64/vendor.qti.hardware.data.lce@1.0.so
+vendor/lib/vendor.qti.hardware.data.lce@1.0.so
 
 # Configstore
 vendor/bin/hw/vendor.qti.hardware.capabilityconfigstore@1.0-service
@@ -150,6 +173,7 @@ vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 vendor/lib64/hw/consumerir.lahaina.so
 
 # CVP
+vendor/lib64/libcvp_util.so
 vendor/etc/cvp/v2.0/facedetection/model1.dat
 vendor/etc/cvp/v2.1/facedetection/model2.dat
 vendor/firmware/evass-lt.b00
@@ -210,10 +234,10 @@ vendor/etc/init/vendor.qti.diag.rc
 vendor/lib/vendor.qti.diaghal@1.0.so
 vendor/lib64/vendor.qti.diaghal@1.0.so
 
-# Display (HDR) - from LA.UM.9.14.r1-16300-LAHAINA.0
+# Display (HDR)
 vendor/lib64/libhdr_tm.so|1102137c99d54609f9eb2b1b5495a9e8f044b396
 
-# Display (SDM) - from LA.UM.9.14.r1-16300-LAHAINA.0
+# Display (SDM)
 vendor/lib64/libdisplayqos.so|fd1704d31d1f567952500f32ed8b6496024b11ba
 vendor/lib64/libdisplayskuutils.so|f1cceb91b2afc210444b543b9f11a824537bff5b
 vendor/lib64/libdpps.so|299b2a604f1546e59e3fdaf4c2f7e12bc2c9b79a
@@ -233,7 +257,7 @@ vendor/lib64/libtinyxml2_1.so|11ceb3f1e7650c41621d47e5ec5567c8f466086e
 vendor/bin/qdcmss
 vendor/etc/init/qdcmss.rc
 
-# Display postprocessing - from lisa_global-user 11 RKQ1.210503.001 V12.5.14.0.RKOMIXM release-keys
+# Display postprocessing
 vendor/bin/hw/vendor.display.color@1.0-service|347fda7fe824e405829e1772739e999937421a58
 vendor/bin/ppd|28b9f29edf85ed300a3b3c7d81e2271ddf938969
 vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
@@ -246,7 +270,7 @@ vendor/lib64/vendor.display.color@1.4.so|fe3380621cf3384284fc19d82b8644910adb06e
 vendor/lib64/vendor.display.color@1.5.so|9a2c10cbf8ed37371528cc33b7957ff6595ac2ee
 vendor/lib64/vendor.display.postproc@1.0.so|6fd8249ae537e145f1940cdd264773898e6f64b9
 
-# DPM - from LA.UM.9.14.r1-16800-LAHAINA.0
+# DPM
 system_ext/bin/dpmd|b11102e06c7e169b3da762a0db408cb8e16d7b01
 system_ext/etc/dpm/dpm.conf|95e27da8c989e96c6faea6f0697bce11955b62a5
 system_ext/etc/init/dpmd.rc|738b638ff04cda368e22c03e16baf90ba157a6fc
@@ -269,22 +293,30 @@ vendor/lib64/libdpmqmihal.so|2656dc27e2da38a482d639701647520d259ff50b
 # DRM (QSEECom)
 vendor/bin/hw/vendor.qti.hardware.qseecom@1.0-service
 vendor/bin/qseecomd
+vendor/bin/ssgqmigd
+vendor/bin/ssgtzd
+vendor/etc/gpfspath_oem_config.xml
 vendor/etc/init/qseecomd.rc
+vendor/etc/init/ssgtzd.rc
 vendor/etc/init/vendor.qti.hardware.qseecom@1.0-service.rc
+vendor/etc/ssg/ta_config.json
+vendor/etc/ssg/tz_whitelist.json
 vendor/lib64/hw/vendor.qti.hardware.qseecom@1.0-impl.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libQSEEComAPI.so
+vendor/lib64/libbase64.so
 vendor/lib64/libcpion.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
+vendor/lib64/libminksocket.so
 vendor/lib64/libops.so
 vendor/lib64/libqisl.so
 vendor/lib64/librpmb.so
-vendor/lib64/libsecureui_svcsock.so
+vendor/lib64/libsi.so
 vendor/lib64/libspl.so
 vendor/lib64/libssd.so
-vendor/lib64/libtzdrmgenprov.so
+vendor/lib64/libtrustedapploader.so
 vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
 # DRM (Widevine)
@@ -320,7 +352,7 @@ vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 
-# Graphics - from missi-user-12-SKQ1.211006.001-V13.0.3.0.SKOINXM-release-keys
+# Graphics
 vendor/lib/egl/eglSubDriverAndroid.so|a3d76c8abd204ba4d5509792c4662a63c967cb79
 vendor/lib/egl/libEGL_adreno.so|ef5f29a8e336a7f933954e393753f50c2a6da4b8
 vendor/lib/egl/libGLESv1_CM_adreno.so|8ab84e1b996669d9a5dffbf1bd3e9d99c4d921ed
@@ -349,8 +381,11 @@ vendor/lib64/libgsl.so|9194e465151ec7d542da2470ada35f72f7f05fff
 vendor/lib64/libllvm-glnext.so|aa575eccc76211fe5bae7dd8a107a21820ddf2a9
 vendor/lib64/libllvm-qcom.so|b8c672f11b23dd9682ba1a2a27fe6b2ca7f79060
 vendor/lib64/hw/vulkan.adreno.so|c5b0c82d9128dbcc9f52bf07b41b47b27e44d6d3
+vendor/lib/vendor.qti.qspmhal@1.0-impl.so
+vendor/lib/vendor.qti.qspmhal@1.0.so
+vendor/lib64/libadreno_app_profiles.so
 
-# Graphics (Adreno) - from LA.UM.9.14.r1-16800-LAHAINA.0
+# Graphics (Adreno)
 -vendor/app/com.qualcomm.qti.gpudrivers.lahaina.api30/com.qualcomm.qti.gpudrivers.lahaina.api30.apk;PRESIGNED|57f68fb3484aa59376dc29adc7aa8824c2f4edf3
 vendor/lib/libC2D2.so|1c89e545a5dabc94d27db32031594a792d91d6fd
 vendor/lib/libVkLayer_q3dtools.so|1470fa37673bc92743188a98c3a0a461de7d6c1d
@@ -427,7 +462,7 @@ vendor/etc/seccomp_policy/gnss@2.0-xtwifi-client.policy|45b44cf547358961841aeba7
 vendor/etc/seccomp_policy/gnss@2.0-xtwifi-inet-agent.policy|9c0419bf0a0b4ef129527a9d4c024a624ff34d6e
 vendor/etc/xtwifi.conf
 
-# IMS - from lisa_global-user 11 RKQ1.210503.001 V12.5.14.0.RKOMIXM release-keys
+# IMS
 system_ext/lib64/lib-imsvideocodec.so|4a787afeb91cccc7aa6c90f94c9c511e54829d03
 system_ext/lib64/lib-imsvt.so|f795cc87119b49587dbb1f3e4349fcf67b0610ed
 system_ext/lib64/lib-imsvtextutils.so|50a092eb7b490f4307bddb3d5a4c595b458bc503
@@ -500,7 +535,7 @@ vendor/firmware/ipa_fws.b04
 vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
-# IPA firmware (yupik) - from lisa_global-user 11 RKQ1.210503.001 V12.5.14.0.RKOMIXM release-keys
+# IPA firmware (yupik) 
 vendor/firmware/yupik_ipa_fws.b00|91417dbc050df4edd492918a4a1e884ad9e4d3f2
 vendor/firmware/yupik_ipa_fws.b01|8203795e4b12e4742eccaaed9b1ed5fe7cacfe31
 vendor/firmware/yupik_ipa_fws.b02|c0f5259e45f67f322459e7afde30cba608b9ea5f
@@ -509,7 +544,7 @@ vendor/firmware/yupik_ipa_fws.b04|7aa0ec649f20af523f21c6e19014987f86f18dff
 vendor/firmware/yupik_ipa_fws.elf|b2dde57729a52803e7f5ea0c4044d9fded917bab
 vendor/firmware/yupik_ipa_fws.mdt|530a29b478b7772ab97e8ff13e921db8a8c01367
 
-# IRQ balance - from LA.UM.9.14.r1-16800-LAHAINA.0
+# IRQ balance
 vendor/bin/msm_irqbalance|bc76f9014b772a93a6a3c6c4cae79f751c872e1f
 vendor/etc/msm_irqbalance.conf|39d0d339b3551e44258360abdb6e55e047983485
 
@@ -536,7 +571,12 @@ vendor/lib/liblistensoundmodel2.so
 vendor/lib/libmulawdec.so
 vendor/lib/libsmwrapper.so
 
-# Media - from lisa_global-user 11 RKQ1.210503.001 V12.5.14.0.RKOMIXM release-keys
+# Media
+vendor/lib/libmm-color-convertor.so
+vendor/lib/libvppimmotion.so
+vendor/lib/vndk/libstagefright_foundation.so
+vendor/lib/vndk/libstagefright_omx.so
+vendor/lib64/libvppimmotion.so
 system_ext/lib/libmmosal.so|d6fabd9084c804d0077e7c0e820cb76eae759479
 system_ext/lib/libmmparser_lite.so|52943425a42d4be397818929ed9dbf8fbd40b6fd
 system_ext/lib64/libmmosal.so|168f3f3ee8c6e8e3ffe8ed5aa8f7cd03ae3cc39c
@@ -549,7 +589,6 @@ vendor/etc/media/video_system_specs.json|d0732bff6336fa90adfcf6ca010e0e9d0114292
 vendor/etc/media_lahaina/video_system_specs.json|4b5a281b5eca682cf85a0768f1e156689da07f17
 vendor/etc/seccomp_policy/codec2.vendor.base-arm.policy|3c396a276dfb589501105e7158459fa2d644607e
 vendor/etc/seccomp_policy/codec2.vendor.ext-arm.policy|a134d3d5d74294ca8164056b42389b1c7dbb2b65
--vendor/etc/vintf/manifest/c2_manifest_vendor.xml|0e532bf1c7d6a0ee2e7e03a9cc3283a5bffc7f8e
 vendor/etc/video_system_specs.json|4b5a281b5eca682cf85a0768f1e156689da07f17
 vendor/lib/libmmosal.so|130b02ef9cc2e497a1dc78a143e199630049b2e1
 vendor/lib/libqc2vppfilter.so|beb0f0001e7e42c26cf31b1cbcb20a73d44207aa
@@ -562,7 +601,7 @@ vendor/lib/libqcodec2_utils.so|ff7d2b81c5959ff222cf6f59c834f90c82a9f046
 vendor/lib/libqcodec2_v4l2codec.so|0bbbee245b1071d6c0702579af8e5b0095e8baae
 vendor/lib64/libmmosal.so|3736380ae324c63fbb3a3ce20b7969dfcdc60d61
 
-# Media (VPU yupik firmware) - from lisa_global-user 11 RKQ1.210503.001 V12.5.14.0.RKOMIXM release-keys
+# Media (VPU yupik firmware) 
 vendor/firmware/vpu20_1v.b00|daba699b89a73e4d4098bfe02adeb9483f7d2378
 vendor/firmware/vpu20_1v.b01|f07c493a758d69b1b871858342fd3784b93176d6
 vendor/firmware/vpu20_1v.b02|1451269225d2f41abc2f214d7d538d6d7395c48c
@@ -657,16 +696,6 @@ vendor/firmware/vpu20_4v_unsigned.mbn
 vendor/bin/mlid
 vendor/lib64/libminksocket.so
 
-# Mlipay
-vendor/bin/mlipayd@1.1
-vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc
--vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.mlipay.xml
-vendor/lib64/libmlipay.so
-vendor/lib64/libmlipay@1.1.so
-vendor/lib64/vendor.xiaomi.hardware.mlipay@1.0.so
-vendor/lib64/vendor.xiaomi.hardware.mlipay@1.1.so
-vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.0.so
-
 # Neural networks - from LA.UM.9.14.r1-16800-LAHAINA.0
 vendor/bin/hw/android.hardware.neuralnetworks@1.3-service-qti|92d0d5234b4e80cc9e525087e7ceebeec5da8fbd
 vendor/etc/init/android.hardware.neuralnetworks@1.3-service-qti.rc|4b7f2c5f914f3eef38f19936c0a06efc09b5b28c
@@ -728,7 +757,8 @@ vendor/bin/pm-proxy|f8facebb49d5c46ffd0036c31f60ad188ded4cc4
 vendor/bin/pm-service|8a7615c3bdca02ab45da44320c68b85d8da6c3b2
 vendor/lib64/libperipheral_client.so|cb7d5613a4e0afb8395fe7f139480e615c5f6da2
 
-# Perf - from LA.UM.9.14.r1-16800-LAHAINA.0
+# Perf
+vendor/lib64/vendor.qti.memory.pasrmanager@1.0.so|db794e0ba79fd310a8427cbcae03be05008c429f
 vendor/lib64/vendor.qti.memory.pasrmanager@1.1.so|db794e0ba79fd310a8427cbcae03be05008c429f
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|081d5dbbd246067067ecd56f31fcd1ee440e9d46
 vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc|459b4c23550a56ac545f78c6d391f3d7dd9ba45b
@@ -845,7 +875,7 @@ vendor/etc/init/vendor.qti.hardware.servicetracker@1.2-service.rc
 -vendor/etc/vintf/manifest/vendor.qti.hardware.servicetracker@1.2-service.xml
 vendor/lib64/hw/vendor.qti.hardware.servicetracker@1.2-impl.so
 
-# RIL - from lisa_global-user 11 RKQ1.210503.001 V12.5.14.0.RKOMIXM release-keys
+# RIL 
 -system_ext/app/QtiTelephonyService/QtiTelephonyService.apk|20da64a1fbb4d9c04c763333c4d9a0b7c1053fb9
 system_ext/etc/permissions/qcrilhook.xml|30397e293b2c40e6b7a1d11c2a615cdd05de625a
 system_ext/etc/permissions/qti_libpermissions.xml|593bcb72cce68ceb0a70f50bcae7d460114e7c62
@@ -981,9 +1011,6 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
-# Soter service (Tencent)
--app/SoterService/SoterService.apk
-
 # Thermal engine
 vendor/bin/thermal-engine
 vendor/etc/init/init_thermal-engine.rc
@@ -997,6 +1024,7 @@ vendor/etc/init/init.time_daemon.rc|b253ca2a498757e14e1d7a051bf504ae09218f51
 vendor/lib64/libtime_genoff.so|3c2f96d4e75b29add42046e4d1ca3205e2447eeb
 
 # Trusted Execution Environment connector
+vendor/lib/libQTEEConnector_listener.so
 vendor/bin/hw/vendor.qti.hardware.qteeconnector@1.0-service|a63698dac243ce81fe581328b9f8cd93b88571a2
 vendor/etc/init/vendor.qti.hardware.qteeconnector@1.0-service.rc|c966350ee67d3a7c73ca7184e3725264025d16f5
 vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so|0d9c3ed717bdcf74c5931854ba03a3673eb35cd2
@@ -1004,13 +1032,14 @@ vendor/lib64/libGPQTEEC_vendor.so|53318cc689d49858bf5ae132ad02d372acb3bb9c
 vendor/lib64/libGPTEE_vendor.so|c4f0ac36e6cda86f979663ec573560b882f9580e
 vendor/lib64/libQTEEConnector_vendor.so|010ca73abaee96982edf24bddd2494282c16093a
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so|2554dc8f9763f615d9f199436ec93aa2e9ffbccd
+vendor/lib64/libQTEEConnector_listener.so
 
 # Trusted User Interface
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|251475f5abd62976b2f148fa3803e0970746b75e
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so|ddd34e7ef39a29f7db546e6a2bc0c3b90e13c9a0
 
-# VPP - from lisa_global-user 11 RKQ1.210503.001 V12.5.14.0.RKOMIXM release-keys
+# VPP 
 vendor/bin/hw/qconfigservice|d7a9c20dd3bc1e0955031a746e627fc1f6aea51b
 vendor/bin/vppservice|ad57d309525ca2ef10709e81a14a72ecababc518
 vendor/etc/configstore/vpp.configstore.xml|ed961545186c66fd9523f25866c74f2e11ee63d7
@@ -1122,3 +1151,7 @@ vendor/lib/libwfduibcsrcinterface_proprietary.so
 vendor/lib/libwfdutils_proprietary.so
 vendor/lib/vendor.qti.hardware.wifidisplaysession@1.0.so
 vendor/lib/vendor.qti.hardware.wifidisplaysessionl@1.0-halimpl.so
+
+# Xiaomi MTD service
+vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.0.so
+vendor/lib/vendor.xiaomi.hardware.mtdservice@1.0.so
