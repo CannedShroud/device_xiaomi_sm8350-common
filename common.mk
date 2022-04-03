@@ -306,6 +306,8 @@ PRODUCT_PACKAGES += \
 
 # Keystore
 PRODUCT_PACKAGES += \
+    android.system.keystore2 \
+    android.hardware.keymaster@4.0.vendor \
     android.hardware.keymaster@4.1.vendor
 
 # IR
@@ -534,6 +536,7 @@ PRODUCT_COPY_FILES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
+    android.hardware.vibrator.service \
     vendor.qti.hardware.vibrator.service.xiaomi_sm8350
 
 PRODUCT_COPY_FILES += \

@@ -27,10 +27,27 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 <compatibility-matrix version="1.0" type="device">
     <hal format="hidl" optional="true">
+        <name>android.hardware.sensors</name>
+        <version>2.1</version>
+        <interface>
+            <name>ISensors</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
         <name>android.hardware.bluetooth.a2dp</name>
         <version>1.0</version>
         <interface>
             <name>IBluetoothAudioOffload</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.configstore</name>
+        <version>1.0-1</version>
+        <transport>hwbinder</transport>
+        <interface>
+            <name>ISurfaceFlingerConfigs</name>
             <instance>default</instance>
         </interface>
     </hal>

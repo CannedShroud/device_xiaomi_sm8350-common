@@ -55,7 +55,7 @@
             <instance>gnss_vendor</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
+    <hal format="hidl">
         <name>android.hardware.media.c2</name>
         <version>1.0</version>
         <interface>
@@ -863,6 +863,24 @@
         <version>1.1</version>
         <interface>
             <name>IMlipayService</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>com.dsi.ant</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IAnt</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>android.hardware.configstore</name>
+        <version>1.1</version>
+        <transport>hwbinder</transport>
+        <interface>
+            <name>ISurfaceFlingerConfigs</name>
             <instance>default</instance>
         </interface>
     </hal>
