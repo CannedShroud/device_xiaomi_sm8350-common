@@ -1,4 +1,5 @@
-<manifest version="2.0" type="device" target-level="5">
+<manifest version="1.0" type="device" target-level="5">
+    <kernel target-level="5"/>
     <hal format="hidl">
         <name>vendor.qti.hardware.fm</name>
         <transport arch="64">passthrough</transport>
@@ -224,15 +225,6 @@
         <version>2.0</version>
         <interface>
             <name>INqNfc</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.data.factory</name>
-        <transport>hwbinder</transport>
-        <version>2.1</version>
-        <interface>
-            <name>IFactory</name>
             <instance>default</instance>
         </interface>
     </hal>
