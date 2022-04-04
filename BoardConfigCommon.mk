@@ -186,8 +186,8 @@ TARGET_USE_AOSP_SURFACEFLINGER := true
 BOARD_VNDK_VERSION := current
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_sm8350-common
-TARGET_RECOVERY_DEVICE_MODULES := libinit_sm8350-common
+TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_lisa
+TARGET_RECOVERY_DEVICE_MODULES := libinit_lisa
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
