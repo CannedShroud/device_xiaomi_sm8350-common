@@ -22,13 +22,10 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
-# Initialize the helper for common
-setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${LINEAGE_ROOT}" true
-
 # Copyright headers and guards
-write_headers "haydn lisa renoir venus"
+write_headers "lisa"
 
-# The standard common blobs
+# The standard blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
 
 # Finish
