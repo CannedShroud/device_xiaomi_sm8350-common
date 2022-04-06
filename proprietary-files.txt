@@ -546,7 +546,6 @@ vendor/firmware/yupik_ipa_fws.mdt|530a29b478b7772ab97e8ff13e921db8a8c01367
 
 # IRQ balance - from LA.UM.9.14.r1-18900-LAHAINA.0
 vendor/bin/msm_irqbalance|f16cd993154581baaf60d4a1f2d9f8b0a5ee1f82
-vendor/etc/msm_irqbalance.conf|39d0d339b3551e44258360abdb6e55e047983485
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.1-service-qti
