@@ -207,7 +207,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.set_touch_timer_ms=200 \
     ro.surface_flinger.force_hwc_copy_for_virtual_displays=true \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
-    ro.surface_flinger.max_virtual_display_dimension=4096 \
+    ro.surface_flinger.max_virtual_display_dimension=4096  \
+    ro.surface_flinger.set_display_power_timer_ms=1000 \
+    ro.surface_flinger.set_idle_timer_ms?=80 \
+    vendor.display.idle_time=0 \
+    vendor.display.idle_time_inactive=2 \
+    debug.sf.frame_rate_multiple_threshold=90
 
 # DRM
 PRODUCT_PACKAGES += \
