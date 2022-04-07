@@ -237,6 +237,7 @@ vendor/lib64/vendor.qti.diaghal@1.0.so
 # Display calibration
 vendor/bin/qdcmss
 vendor/etc/init/qdcmss.rc
+vendor/lib64/libmi-stc-HW-modulate.so
 
 # Display (HDR) - from LA.UM.9.14.r1-18900-LAHAINA.0
 vendor/lib64/libhdr_tm.so|7954c5cd5c0b23fe8d0609361c22d24c59f1448b
