@@ -198,14 +198,17 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.surface_flinger.vsync_event_phase_offset_ns=2000000 \
-	ro.surface_flinger.vsync_sf_event_phase_offset_ns=60000
-
-PRODUCT_PRODUCT_PROPERTY_OVERRIDES += \
+	ro.surface_flinger.vsync_sf_event_phase_offset_ns=60000 \
+    debug.sf.late.sf.duration=10500000 \
     debug.sf.late.app.duration=16600000 \
     debug.sf.early.sf.duration=16600000 \
     debug.sf.early.app.duration=16600000 \
     debug.sf.earlyGl.sf.duration=16600000 \
-    debug.sf.earlyGl.app.duration=16600000
+    debug.sf.earlyGl.app.duration=16600000 \
+    debug.sf.layer_caching_active_layer_timeout_ms=1000 \
+    ro.surface_flinger.enable_layer_caching=true \
+    ro.surface_flinger.supports_background_blur=1 \
+    ro.surface_flinger.display_update_imminent_timeout_ms=50 \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_wide_color_display=true \
@@ -219,10 +222,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     ro.surface_flinger.max_virtual_display_dimension=4096  \
     ro.surface_flinger.set_display_power_timer_ms=1000 \
-    ro.surface_flinger.set_idle_timer_ms?=80 \
+    ro.surface_flinger.set_idle_timer_ms=1500 \
     vendor.display.idle_time=0 \
     vendor.display.idle_time_inactive=2 \
-    debug.sf.frame_rate_multiple_threshold=90
+    debug.sf.frame_rate_multiple_threshold=120
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -627,6 +630,17 @@ PRODUCT_PACKAGES += \
 
 # Use 64-bit dex2oat for better dexopt time.
 PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat64.enabled=true \
+    dalvik.vm.isa.arm64.features=default \
+    dalvik.vm.isa.arm.features=default
+
+PRODUCT_VENDOR_PROPERTIES += \
+    dalvik.vm.heapstartsize=16m \
+    dalvik.vm.heapgrowthlimit=256m \
+    dalvik.vm.heapsize=512m \
+    dalvik.vm.heaptargetutilization=0.5 \
+    dalvik.vm.heapminfree=8m \
+    dalvik.vm.heapmaxfree=32m \
     dalvik.vm.dex2oat64.enabled=true
 
 # Override heap growth limit due to high display density on device
