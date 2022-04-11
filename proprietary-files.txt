@@ -64,12 +64,6 @@ vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so|dfb5d4ce5e2f8b59b1d74f7661
 # Bluetooth (shared dependencies)
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|9af9b8c5d45b5fb352a2b7f79ef03f2da52b8904
 
-# Camera
-vendor/lib/libaidenoiserv2.so
-vendor/lib64/libaidenoiserv2.so
-vendor/lib64/libmialgo_pureView.so
-vendor/lib64/libomp.so
-
 # CDSP - from LA.UM.9.14.r1-18900-LAHAINA.0
 vendor/bin/cdsprpcd|826ca230a88d59d0e68e4ad6090b5109e3dee632
 vendor/etc/init/vendor.qti.cdsprpc-service.rc|36772b70216796e8ef19376d9c6a81ee9ffff549

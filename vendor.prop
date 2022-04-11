@@ -117,9 +117,6 @@ persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
 persist.device_config.runtime_native_boot.iorap_readahead_enable=true
 ro.iorapd.enable=true
 
-# Camera
-camera.disable_zsl_mode=true
-
 # CNE
 persist.vendor.cne.feature=1
 
