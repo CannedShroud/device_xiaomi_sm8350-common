@@ -1,0 +1,2 @@
+
+allow dumpstate adsprpcd_file:dir { search };

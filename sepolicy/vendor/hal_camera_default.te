@@ -8,3 +8,5 @@ allow hal_camera_default proc_stat:file { open };
 
 set_prop(hal_camera_default, vendor_camera_sensor_prop)
 r_dir_file(hal_camera_default, camera_persist_file)
+
+allow hal_camera_default mnt_vendor_file:file { read };
