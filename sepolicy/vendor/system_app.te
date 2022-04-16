@@ -6,3 +6,5 @@ allow system_app zygote:unix_stream_socket getopt;
 
 # Zygote
 allow system_app zygote:unix_stream_socket { getopt };
+
+allow system_app vendor_default_prop:file { getattr  map  open };

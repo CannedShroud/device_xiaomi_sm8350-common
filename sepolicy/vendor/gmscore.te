@@ -1,2 +1,3 @@
 allow gmscore_app adsprpcd_file:dir { search };
+allow gmscore_app vendor_qmcs_file:filesystem { getattr };
 

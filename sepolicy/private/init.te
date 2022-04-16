@@ -2,3 +2,8 @@ allow init hwservicemanager:binder { transfer };
 allow init hal_allocator_default:binder { call };
 allow init hal_allocator_default:fd { use };
 allow init system_file:file { execute_no_trans };
+allow init sysfs_devices_system_cpu:file { write };
+allow init servicemanager:binder { call  transfer };
+allow init sysfs:file { open  write };
+allow init hal_power_service:service_manager { add };
+

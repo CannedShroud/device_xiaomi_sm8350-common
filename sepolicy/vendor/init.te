@@ -7,4 +7,11 @@ allow init vendor_persist_sensors_file:file { append rename };
 allow init vendor_toolbox_exec:file { execute_no_trans };
 allow init default_android_hwservice:hwservice_manager { find };
 allow init hidl_allocator_hwservice:hwservice_manager { find };
-
+allow init vendor_pps_socket:sock_file { write };
+allow init vendor_sysfs_devfreq:file { open  write };
+allow init vendor_sysfs_kgsl:file { open  write };
+allow init vendor_touchfeature_device:chr_file { ioctl  open  read write };
+allow init vendor_latency_device:chr_file { open  write };
+allow init adsprpcd_file:file mounton;
+allow init hal_graphics_composer_default:unix_stream_socket { connectto };
+allow init flipendo:binder { transfer };
