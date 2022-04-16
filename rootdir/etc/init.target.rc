@@ -161,6 +161,9 @@ on init && property:ro.boot.mode=charger
     write /sys/kernel/boot_adsp/boot 1
     wait /sys/class/power_supply/battery
 
+on property:vendor.post_boot.parsed=1
+    start mi-cam-sh
+
 on charger
     start vendor.power_off_alarm
     setprop sys.usb.controller a600000.dwc3
@@ -206,4 +209,10 @@ service init-sensors_fix-sh /vendor/bin/init.sensors_fix.sh
     class main
     user system
     group system
+    oneshot
+
+service mi-cam-sh /vendor/bin/init.mi-cam.sh
+    class main
+    user system
+    group system 
     oneshot
