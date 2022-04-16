@@ -205,10 +205,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     debug.sf.early.app.duration=16600000 \
     debug.sf.earlyGl.sf.duration=16600000 \
     debug.sf.earlyGl.app.duration=16600000 \
-    debug.sf.layer_caching_active_layer_timeout_ms=1000 \
-    ro.surface_flinger.enable_layer_caching=true \
-    ro.surface_flinger.supports_background_blur=1 \
-    ro.surface_flinger.display_update_imminent_timeout_ms=50 \
+    debug.sf.earlyGl.app.duration=16600000
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_wide_color_display=true \
