@@ -443,14 +443,18 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
 PRODUCT_PACKAGES += \
+    android.hardware.power-service.lisa-libperfmgr \
     android.hardware.power-service-qti \
     vendor.qti.hardware.perf@2.2.vendor \
     libqti-perfd-client
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml \
     $(LOCAL_PATH)/configs/perf/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/google/interfaces
 
 # QMI
 PRODUCT_PACKAGES += \
