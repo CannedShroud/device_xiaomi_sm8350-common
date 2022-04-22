@@ -180,6 +180,7 @@ SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/private
 SYSTEM_EXT_PRIVATE_PUBLIC_DIRS += $(COMMON_PATH)/sepolicy/public
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 BOARD_SEPOLICY_DIRS += hardware/google/pixel-sepolicy/power-libperfmgr
+BOARD_SEPOLICY_DIRS += hardware/google/pixel-sepolicy/thermal
 
 # SurfaceFlinger
 TARGET_USE_AOSP_SURFACEFLINGER := true
