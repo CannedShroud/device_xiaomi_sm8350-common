@@ -143,8 +143,8 @@
       "Name": "GPUIdleTimer",
       "Path": "/sys/class/kgsl/kgsl-3d0/idle_timer",
       "Values": [
-        "10000",
-        "80"
+        "64",
+        "58"
       ],
       "ResetOnInit": false
     },
@@ -504,7 +504,7 @@
       "PowerHint": "LAUNCH",
       "Node": "GPUIdleTimer",
       "Duration": 5000,
-      "Value": "10000"
+      "Value": "58"
     },
     {
       "PowerHint": "LAUNCH",
