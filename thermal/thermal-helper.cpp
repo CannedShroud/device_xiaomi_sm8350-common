@@ -30,8 +30,6 @@
 
 #include "thermal-helper.h"
 
-#define DEBUG = 0;
-
 namespace android {
 namespace hardware {
 namespace thermal {
@@ -249,7 +247,6 @@ void PowerHalService::setMode(const std::string &type, const ThrottlingSeverity 
     }
 
     std::string power_hint = StringPrintf("THERMAL_%s_%s", type.c_str(), toString(t).c_str());
-    if (DEBUG)
         LOG(INFO) << "Send Hint " << power_hint << " Enable: " << std::boolalpha << enable;
     lock_.lock();
     if (!power_hal_ext_aidl_->setMode(power_hint, enable).isOk()) {
@@ -1250,9 +1247,6 @@ std::chrono::milliseconds ThermalHelper::thermalWatcherCallbackFunc(
                                    : sensor_info.polling_delay;
             }
         }
-
-        if (DEBUG)
-            LOG(INFO) << temp.name << ": " << temp.value << " degC";
 
         // Start PID computation
         if (sensor_status.pid_request_map.size()) {
